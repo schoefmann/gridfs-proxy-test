@@ -1,0 +1,8 @@
+(ruby 1.9.3p0)
+
+bundle install
+
+rackup rackup.ru
+
+ab -n 2000 -c 10 http://localhost:9999/testImage.jpg
+

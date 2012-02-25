@@ -1,0 +1,8 @@
+(node v0.6.3)
+
+npm install mongo
+
+node server.js
+
+ab -n 2000 -c 10 http://localhost:9999/testImage.jpg
+
