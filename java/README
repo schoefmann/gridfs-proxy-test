@@ -1,0 +1,6 @@
+(java 1.6)
+
+./compile.sh && ./start.sh
+
+ab -n 2000 -c 10 http://localhost:9999/testImage.jpg
+

@@ -1,11 +1,13 @@
-totally unscientific benchmark between gridfs-streaming with node vs. ruby
+totally unscientific benchmark between gridfs-streaming with node vs. ruby vs. java
+using the most straightforward implementation for each platform. 
 
 1. add a test file to mongo: mongofiles -d test put testImage.jpg
 2. install ruby 1.9.3 + bundler and node.js 0.6.x + npm
-3. see ruby/README and node/README how to run the servers
+3. see {ruby,node,java}/README how to run the servers
 
 On my MBP, node handled ~1350 requests/sec delivering a 90kb image
-Ruby handled ~700 requests/sec
+Ruby (with thin) handled ~700 requests/sec
+Java (with jetty) impressively handled between 2500-4500 requests/sec but hung occasionally, needs investigation.
 
 I guess ruby might do a bit better with the em-mongo driver, but em-mongo currently lacks gridfs support.
 Still good enough if you are a ruby shop anyway, especially when combined with a reverse proxy cache or CDN.
