@@ -2,7 +2,7 @@
 
 bundle install
 
-rackup rackup.ru
+rackup
 
 ab -n 2000 -c 10 http://localhost:9999/testImage.jpg
 
