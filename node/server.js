@@ -19,7 +19,7 @@ db.open(function(err, db) {
         res.end('Not Found\n');
       } else {
         res.writeHead(200, {
-          'Content-Type': 'image/jpeg',
+          'Content-Type': file.contentType || 'binary/octet-stream',
           'Etag': file.fileId,
           'Last-Modified': file.uploadDate.toGMTString()
         });
